@@ -1,4 +1,4 @@
-package com.example.ragdemo;
+package com.example.ragdemo.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -9,6 +9,7 @@ public class RagProperties {
     private String storeFile = "./data/vector-store.json";
     private int topK = 4;
     private double similarityThreshold = 0.6d;
+    private int maxQuestionLength = 4000;
 
     public String getKbPattern() {
         return kbPattern;
@@ -40,5 +41,13 @@ public class RagProperties {
 
     public void setSimilarityThreshold(double similarityThreshold) {
         this.similarityThreshold = similarityThreshold;
+    }
+
+    public int getMaxQuestionLength() {
+        return maxQuestionLength;
+    }
+
+    public void setMaxQuestionLength(int maxQuestionLength) {
+        this.maxQuestionLength = maxQuestionLength;
     }
 }

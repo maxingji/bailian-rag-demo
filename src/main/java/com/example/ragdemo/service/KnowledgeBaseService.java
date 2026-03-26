@@ -1,4 +1,4 @@
-package com.example.ragdemo;
+package com.example.ragdemo.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +16,8 @@ import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.stereotype.Service;
+
+import com.example.ragdemo.properties.RagProperties;
 
 @Service
 public class KnowledgeBaseService {
