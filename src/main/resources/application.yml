@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: bailian-rag-demo
+  ai:
+    model:
+      chat: dashscope
+      embedding: dashscope
+    dashscope:
+      api-key: ${AI_DASHSCOPE_API_KEY:}
+      chat:
+        options:
+          model: qwen-plus
+          temperature: 0.2
+      embedding:
+        options:
+          model: text-embedding-v3
+          dimensions: 1024
+          text-type: document
+
+app:
+  rag:
+    kb-pattern: classpath:/kb/*.md
+    store-file: ./data/vector-store.json
+    top-k: 4
+    similarity-threshold: 0.6
